@@ -1,0 +1,22 @@
+/*
+ * project_3.c
+ *
+ *  Created on: 15 Oct 2023
+ *      Author: Zeyad El-banna
+ */
+#include"lcd.h"
+#include"Ultrasonic_Sensor.h"
+#include<avr/io.h>
+int main(void)
+{
+	SREG |= (1<<7) ;
+	LCD_init();
+	Ultrasonic_init();
+
+	while(1)
+	{
+
+	}
+	return 0 ;
+}
+

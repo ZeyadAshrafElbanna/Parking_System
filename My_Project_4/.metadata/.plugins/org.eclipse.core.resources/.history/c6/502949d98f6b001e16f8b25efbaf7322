@@ -1,0 +1,22 @@
+/*
+ * Ultrasonic_Sensor.c
+ *
+ *  Created on: 15 Oct 2023
+ *      Author: Zeyad El-banna
+ */
+#include"Ultrasonic_Sensor.h"
+#include<util/delay.h>
+ICU_ConfigType icu_init = {F_CPU_8 , RAISING};
+void Ultrasonic_init(void)
+{
+	ICU_init(&icu_init);
+	ICU_setCallBack();
+	GPIO_setupPinDirection(PORTB_ID,PIN5_ID,PIN_OUTPUT);
+}
+void Ultrasonic_Trigger(void)
+{
+	GPIO_writePin(PORTB_ID , PIN5_ID , LOGIC_HIGH);
+	_delay_us(10);
+	GPIO_writePin(PORTB_ID , PIN5_ID , LOGIC_LOW);
+}
+

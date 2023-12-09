@@ -1,0 +1,34 @@
+22:43:25 **** Incremental Build of configuration Debug for project My_Project_3 ****
+make all 
+Building file: ../project_3.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"project_3.d" -MT"project_3.o" -c -o "project_3.o" "../project_3.c"
+Finished building: ../project_3.c
+ 
+Building target: My_Project_3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,My_Project_3.map -mmcu=atmega32 -o "My_Project_3.elf"  ./Ultrasonic_Sensor.o ./gpio.o ./icu.o ./lcd.o ./project_3.o   
+Finished building target: My_Project_3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S My_Project_3.elf  >"My_Project_3.lss"
+Finished building: My_Project_3.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 My_Project_3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9628 bytes (29.4% Full)
+(.text + .data + .bootloader)
+
+Data:        283 bytes (13.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:43:26 Build Finished. 0 errors, 0 warnings. (took 839ms)
+

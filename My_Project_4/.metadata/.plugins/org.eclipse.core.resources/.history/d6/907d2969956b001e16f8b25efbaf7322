@@ -1,0 +1,25 @@
+/*
+ * project_4.c
+ *
+ *  Created on: 15 Oct 2023
+ *      Author: Zeyad El-banna
+ */
+#include"lcd.h"
+#include"Ultrasonic_Sensor.h"
+#include<avr/io.h>
+int main(void)
+{
+	uint16 dis = 0 ;
+	SREG |= (1<<7) ;
+	LCD_init();
+	Ultrasonic_init();
+	LCD_displayString("Distance = ");
+	while(1)
+	{
+		Ultrasonic_Trigger();
+		dis = Ultrasonic_readDistance();
+		LCD_intgerToString((int)dis);
+	}
+	return 0 ;
+}
+
